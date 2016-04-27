@@ -14,8 +14,20 @@ Route::get('/geolocation/{loc}', function($loc){
 	$geolocation = new Geolocation([
 		//'clientID' => ''
 	]);
-	$location = $geolocation->location($loc);
-	return $location;
+	$locationsJson = $geolocation->location($loc);
+	//return $location;
+	$locations = json_decode($locationsJson);
+	$address = $locations->results[0]->formatted_address;
+	// dd($address);
+	// dd($locations->results[0]->formatted_address);
+	// dd($locations->results[0]->formatted_address);
+	// dd($locations['results']['formatted_address']);
+	// var_dump($locations);
+	// return;
+
+	return view('geolocation', [
+    'a' => $address
+  ]);
 });
 
 Route::get('/', function () {

@@ -14,7 +14,7 @@ class Geolocation{
     $maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=losangeles&sensor=false';
     $maps_json = file_get_contents($maps_url);
   //  $maps_array = json_decode($maps_json);
-    //echo($maps_j);
+  //  echo($maps_json);
     //dd($maps_array);
    return $maps_json;
   }
