@@ -11,7 +11,7 @@ class Geolocation{
 
   public function location($loc)
   {
-    $maps_url = 'https://maps.googleapis.com/maps/api/geocode/json?address=losangeles&sensor=false';
+    $maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=$loc";
     $maps_json = file_get_contents($maps_url);
   //  $maps_array = json_decode($maps_json);
   //  echo($maps_json);

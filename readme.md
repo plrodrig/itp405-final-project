@@ -11,6 +11,6 @@
 I will be using the Google Geolocation API, and Instagram API.
 
 ##What do you think your tables will be?
-One table will be dedicated to users which will contain user_id,email, password
-One table will be for tasks which will contain task_id, user_id, and description
-One picture table that contains picture_id, and task_id associated with each picture, and link to picture. 
++One table will be dedicated to users which will contain user_id,email, password
++One table will be for tasks which will contain task_id, user_id, and description
++One picture table that contains picture_id, and task_id associated with each picture, and link to picture.
