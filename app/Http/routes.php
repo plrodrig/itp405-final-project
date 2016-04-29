@@ -35,5 +35,5 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'web'], function () {
-  Route::get('/register', 'RegisterController@createUser');
+	Route::get('/register', 'RegisterController@index');
 });

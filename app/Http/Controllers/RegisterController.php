@@ -9,8 +9,12 @@ use App\Http\Requests;
 class RegisterController extends Controller
 {
     //
-    public function createUser()
+    public function index()
     {
-      return view('register.createUser');
+      return view('register.create');
     }
+
+  //  public function create(){
+    //  return view('register.create');
+  //  }
 }
