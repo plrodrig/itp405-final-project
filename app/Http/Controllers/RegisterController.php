@@ -14,6 +14,11 @@ class RegisterController extends Controller
       return view('register.create');
     }
 
+    public function create()
+    {
+      return view('register.create');
+    }
+
   //  public function create(){
     //  return view('register.create');
   //  }

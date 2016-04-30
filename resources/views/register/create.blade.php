@@ -6,7 +6,8 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form action="\register" method="post" role="form">
-			<h2>Register <small>It's free and always will be.</small></h2>
+      <input type="hidden" name="_token" value="{{csrf_token()}}">
+			<h2>Register <small>Do it.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -19,9 +20,6 @@
 						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
 			</div>
 			<div class="form-group">
 				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">

@@ -36,4 +36,5 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'web'], function () {
 	Route::get('/register', 'RegisterController@index');
+	Route::post('/register', 'RegisterController@create');
 });
