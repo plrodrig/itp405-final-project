@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 use App\Http\Requests;
 use App\User;
@@ -14,9 +15,23 @@ class RegisterController extends Controller
     //
     public function index(Request $request)
     {
-      //if(count($errors) > 0){
-      //  dd($errors);
-      //}
+      $errors = $request->session()->get('errors', new MessageBag);
+
+      if(count($errors) > 0){
+        dd($errors);
+      }
+
+      if ($request->session()->has('err')) {
+        //dd($request->session()->get('err'));
+        $v = $request->session()->get('err');
+        $request->session()->forget('err');
+        //dd($v);
+
+        return view('register.create', [
+          'errop' => $v
+        ]);
+      }
+
       return view('register.create');
     }
 
@@ -30,9 +45,11 @@ class RegisterController extends Controller
       ]);
 
       if($validation->fails()) {
-        $request->session()->put('test', 'HEY');
+        $request->session()->put('err', $validation->messages());
+        $request->session()->save();
         return redirect('/register')->withInput()->withErrors($validation);
       }
+
       $user = new User();
       $user->name = $request->input('name');
       $user->email = $request->input('email');

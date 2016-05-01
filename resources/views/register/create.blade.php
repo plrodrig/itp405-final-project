@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
 
+<?php if(!empty($errop)) : ?>
+  <?php foreach ($errop->all() as $error) : ?>
+    <li>
+      <?php echo $error ?>
+    </li>
+  <?php endforeach ?>
+<?php endif ?>
 
 <?php if(count($errors) > 0) : ?>
   dd(count($errors));

@@ -15,8 +15,15 @@ class DashboardController extends Controller
     //
     public function index()
     {
-      return view('dashboard.dashboard');
+      if(Auth::check()){
+        return view('dashboard.dashboard');
+      }
+      return redirect('/login');
     }
-
+    public function logout()
+    {
+      Auth::logout();
+      return redirect('/login');
+    }
 
 }
