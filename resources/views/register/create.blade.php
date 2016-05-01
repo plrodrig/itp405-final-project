@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 
+
 <?php if(count($errors) > 0) : ?>
   dd(count($errors));
   <ul>

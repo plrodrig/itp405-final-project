@@ -38,4 +38,6 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/register', 'RegisterController@index');
 	Route::post('/register/new', 'RegisterController@create');
 	Route::get('/login', 'LoginController@index');
+	Route::post('/login/auth', 'LoginController@login');
+	Route::get('/dashboard', 'DashboardController@index');
 });

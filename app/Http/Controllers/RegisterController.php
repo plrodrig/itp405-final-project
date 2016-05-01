@@ -12,7 +12,7 @@ Use Validator;
 class RegisterController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
       //if(count($errors) > 0){
       //  dd($errors);
@@ -29,7 +29,8 @@ class RegisterController extends Controller
         'password' => 'required'
       ]);
 
-      if($validation->fails()){
+      if($validation->fails()) {
+        $request->session()->put('test', 'HEY');
         return redirect('/register')->withInput()->withErrors($validation);
       }
       $user = new User();
