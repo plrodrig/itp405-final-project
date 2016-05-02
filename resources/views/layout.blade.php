@@ -13,6 +13,14 @@
 
 </head>
 <body>
+  <div class="masthead">
+     <div class="container">
+       <h1 class="title">InstaTraveler<span class="red">&hearts;</span></h1>
+       <p class="subtitle">
+         Record your future trips here. #Traveler.
+       </p>
+     </div>
+   </div>
   @yield('content')
 </body>
 </html>

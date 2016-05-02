@@ -1,32 +1,28 @@
 @extends('layout')
 @section('content')
- <h1>Dashboard</h1>
- Welcome, {{Auth::user()->name}}
- <a href="/logout"> Logout </a>
+ <center>
+   <h1>Welcome, Traveler {{Auth::user()->name}}. <br> Search a location you'd love to visit!  </h1>
 
- <div class="masthead">
-    <div class="container">
-      <h1 class="title">Instagram Photo <span class="red">&hearts;</span> Checker</h1>
-      <p class="subtitle">
-        Find out who liked your Instagram photos the most.
-      </p>
-    </div>
-  </div>
+ </center>
+ <a href="/logout"> Logout </a>
 
   <div class="container">
 
 
     <div class="content">
 
-      <form class="form-inline">
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-addon">Instagram Username:</div>
-            <input type="text" class="form-control" id="input" placeholder="e.g. heiswayi.nrird">
+      <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <form action="/results/{location?}" method="get" role="form">
+      	    <div class="input-group">
+                  <input type="text" class="form-control" name="location" placeholder="Search">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+            </div>
+          </form>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary" id="button">Check</button>
-      </form>
+  	</div>
 
       <div id="contents"></div>
 
@@ -34,7 +30,6 @@
 
 
     <footer class="colophon">
-      <p>&copy; <a href="http://heiswayi.github.io">Heiswayi Nrird</a></p>
     </footer>
 
   </div>
