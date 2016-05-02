@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 Use Validator;
 use App\Services\API\Geolocation;
 use Cache;
+use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller
 {
@@ -26,6 +27,16 @@ class DashboardController extends Controller
     {
       Auth::logout();
       return redirect('/login');
+    }
+
+    public function store(Request $request)
+    {
+      //need access to these parameters so i can save it to picture object
+      $location = $request->input('location');
+      //create new picture object
+      //add details in here
+      //save
+      return redirect('/wishlist');
     }
 
     public function results(Request $request){

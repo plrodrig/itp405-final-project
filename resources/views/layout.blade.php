@@ -9,8 +9,11 @@
   <script type="text/javascript" src="{{ URL::asset('js/registerJS.js') }}"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/registerCSS.css') }}" />
   <script type="text/javascript" src="{{ URL::asset('js/instaJS.js') }}"></script>
+  <script type="text/javascript" src="{{ URL::asset('js/list.js') }}"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/instaCSS.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/results.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/button.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/list.css') }}" />
 
 </head>
 <body>

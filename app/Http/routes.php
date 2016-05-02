@@ -43,6 +43,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/dashboard', 'DashboardController@index');
 	Route::get('/logout', 'DashboardController@logout');
 	Route::get('/results', 'DashBoardController@results');
-
-
+	Route::post('/results', 'DashboardController@store');
+	Route::get('/wishlist', function () {
+	    return view('dashboard.list');
+	});
 });
