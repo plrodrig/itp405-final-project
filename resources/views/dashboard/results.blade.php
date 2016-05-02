@@ -21,8 +21,12 @@
              <img src="{{$image['images']['low_resolution']['url']}}" class="img-responsive img-rounded full-width">
             <form action="" method="post" role="form">
               <?php echo csrf_field() ?>
-
+              @if( ! empty($image['location']['name']))
               <input type="hidden" class="form-control" name="location" value="{{$image['location']['name']}}">
+              @endif
+              @if( ! empty($image['user']['full_name']))
+              <input type="hidden" class="form-control" name="full_name" value="{{$image['user']['full_name']}}">
+              @endif
 
             <button href="#" class="myButton" type="submit"> Save </button> </center>
             </form>

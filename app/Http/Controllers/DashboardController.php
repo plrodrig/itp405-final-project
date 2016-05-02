@@ -12,6 +12,7 @@ Use Validator;
 use App\Services\API\Geolocation;
 use Cache;
 use Illuminate\Support\Facades\Input;
+use App\Models\Picture;
 
 class DashboardController extends Controller
 {
@@ -32,11 +33,20 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
       //need access to these parameters so i can save it to picture object
-      $location = $request->input('location');
+    //  $location = $request->input('location');
+    //  $full_name = $request->input('full_name');
+    //  $img_url = $request->input('url');
+      $picture = new Picture;
+      //$picture->location = $request->input('location');
+      $picture->location = 'Nwe fli';
+      //$picture->link = $img_url;
+      //$picture->tag = $tag;
+      $picture->save();
+      //return redirect('/login')->with('success', true);
       //create new picture object
       //add details in here
       //save
-      return redirect('/wishlist');
+      return redirect('/wishlist')->with('success', true);
     }
 
     public function results(Request $request){
