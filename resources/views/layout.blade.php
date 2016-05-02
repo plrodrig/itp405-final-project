@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ URL::asset('css/registerCSS.css') }}" />
   <script type="text/javascript" src="{{ URL::asset('js/instaJS.js') }}"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/instaCSS.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/results.css') }}" />
 
 </head>
 <body>

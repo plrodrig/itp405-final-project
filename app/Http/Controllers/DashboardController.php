@@ -10,6 +10,7 @@ use Hash;
 use Illuminate\Support\Facades\Auth;
 Use Validator;
 use App\Services\API\Geolocation;
+use Cache;
 
 class DashboardController extends Controller
 {
@@ -27,14 +28,28 @@ class DashboardController extends Controller
       return redirect('/login');
     }
 
-    public function results($location){
-      $geolocation = new Geolocation([
-    		//'clientID' => ''
-    	]);
-    	$locationsJson = $geolocation->location($location);
-    	//return $location;
-    	$locations = json_decode($locationsJson);
-    	$address = $locations->results[0]->formatted_address;
+    public function results(Request $request){
+      $location = $request->input('location');
+    //  dd($location);
+      if(Cache::get($location)){
+        $jsonString = Cache::get($location);
+      } else {
+        $geolocation = new Geolocation([
+          //'clientID' => ''
+        ]);
+        $locationsJson = $geolocation->location($location);
+        //return $location;
+        $locations = json_decode($locationsJson);
+        $address = $locations->results[0]->formatted_address;
+        //pass into instagram api
+        $lat = $locations->results[0]->geometry->location->lat;
+        $lng = $locations->results[0]->geometry->location->lng;
+        $url = "https://api.instagram.com/v1/media/search?lat=$lat&lng=$lng&client_id=32c49420641e47cf8af943b347fdfd0f";
+        $jsonString = file_get_contents($url);
+        Cache::put($lat+$lng, $jsonString, 30);
+      }
+
+      $json = json_decode($jsonString, true);
     	// dd($address);
     	// dd($locations->results[0]->formatted_address);
     	// dd($locations->results[0]->formatted_address);
@@ -43,7 +58,9 @@ class DashboardController extends Controller
     	// return;
 
     	return view('dashboard.results', [
-        'a' => $address
+        'a' => $address,
+        'b' => $lat,
+        'images' => $json['data']
       ]);
     }
 

@@ -13,7 +13,7 @@
 
       <div class="row">
           <div class="col-xs-8 col-xs-offset-2">
-            <form action="/results/{location?}" method="get" role="form">
+            <form action="/results" method="get" role="form">
       	    <div class="input-group">
                   <input type="text" class="form-control" name="location" placeholder="Search">
                   <span class="input-group-btn">

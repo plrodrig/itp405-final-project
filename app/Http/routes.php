@@ -1,5 +1,6 @@
 <?php
 use App\Services\API\Geolocation;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -41,5 +42,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('/login/auth', 'LoginController@login');
 	Route::get('/dashboard', 'DashboardController@index');
 	Route::get('/logout', 'DashboardController@logout');
-	Route::get('/results/{location}', 'DashBoardController@results');
+	Route::get('/results', 'DashBoardController@results');
+
+
 });
