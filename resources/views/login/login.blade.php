@@ -18,11 +18,9 @@
 				</div>
 				<hr class="colorgraph">
 				<div class="row">
-					<div class="col-xs-6 col-sm-6 col-md-6">
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
-					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6">
-						<a href="" class="btn btn-lg btn-primary btn-block">Register</a>
+            <center>
+					<div class="col-xs-12 col-sm-12 col-md-12">
+                     <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
 					</div>
 				</div>
 			</fieldset>

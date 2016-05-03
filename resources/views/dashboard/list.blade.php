@@ -9,31 +9,30 @@
           <a href="#" class="list-group-item">
                 <div class="media col-md-3">
                     <figure class="pull-left">
-                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
+
+                        <img src="{{$picture->link}}" class="img-responsive img-rounded full-width">
                     </figure>
                 </div>
                 <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> List group heading </h4>
-                    <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id, nam quot populo ea.
-                        Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem iudicabit cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                    <h4 class="list-group-item-heading"> {{$picture->location}} </h4>
+                    <p class="list-group-item-text"> No description here?
                     </p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <h2> 13540 <small> votes </small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
-                    <div class="stars">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </div>
-                    <p> Average 4.1 <small> / </small> 5 </p>
+                     <div class="radio">
+                        <label><input type="radio" name="optradio">Dream Travels   </label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio">Reach Travels  </label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio">One Year Travels</label>
+                      </div>
                 </div>
           </a>
         </div>
         </div>
 	</div>
-</div>
+</div> <!--end container-->
 
 @endsection

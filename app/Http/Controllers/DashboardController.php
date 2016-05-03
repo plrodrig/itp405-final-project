@@ -41,10 +41,14 @@ class DashboardController extends Controller
       $picture->name = $request->input('full_name');
       $picture->link = $request->input('img_url');
       $picture->tag = $request->input('tag');
+      //add user_id.
       $picture->save();
+      $pic_id = $picture->id;
       //return redirect('/login')->with('success', true);
       //create new picture object
       //add details in here
+      $request->session()->put('pic', $pic_id);
+      $request->session()->save();
       //save
       return redirect('/wishlist')->with('success', true);
     }
