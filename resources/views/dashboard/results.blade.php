@@ -27,6 +27,12 @@
               @if( ! empty($image['user']['full_name']))
               <input type="hidden" class="form-control" name="full_name" value="{{$image['user']['full_name']}}">
               @endif
+              @if( ! empty($image['images']['low_resolution']['url']))
+              <input type="hidden" class="form-control" name="img_url" value="{{$image['images']['low_resolution']['url']}}">
+              @endif
+              @if( ! empty($image['tags'][0]))
+              <input type="hidden" class="form-control" name="img_url" value="{{$image['tags'][0]}}">
+              @endif
 
             <button href="#" class="myButton" type="submit"> Save </button> </center>
             </form>

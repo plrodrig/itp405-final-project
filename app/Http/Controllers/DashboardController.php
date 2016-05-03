@@ -37,10 +37,10 @@ class DashboardController extends Controller
     //  $full_name = $request->input('full_name');
     //  $img_url = $request->input('url');
       $picture = new Picture;
-      //$picture->location = $request->input('location');
-      $picture->location = 'Nwe fli';
-      //$picture->link = $img_url;
-      //$picture->tag = $tag;
+      $picture->location = $request->input('location');
+      $picture->name = $request->input('full_name');
+      $picture->link = $request->input('img_url');
+      $picture->tag = $request->input('tag');
       $picture->save();
       //return redirect('/login')->with('success', true);
       //create new picture object
