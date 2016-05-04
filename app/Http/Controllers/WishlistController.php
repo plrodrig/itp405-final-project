@@ -21,12 +21,31 @@ class WishlistController extends Controller
       //use model for look up
       //get pic  object
       $picture = Picture::find($pic);
-
+    //  dd($picture);
 
       //look at type, spit out correct list
       //grab data from db and insert into view
       return view('dashboard.list', [
         'picture' => $picture,
+      ]);
+    }
+
+    public function update(Request $request)
+    {
+
+      //update object
+      //if request has pic id, do something otherwise redirect
+      //if put and no parameter, handle it.
+
+
+      $picture = $request->input('pic_id');
+      $pic = Picture::find($picture);
+      $pic->description = "hiisiaia";
+      $pic->type= 'travel';
+      $pic->save();
+      //associate picture to a user?
+      return view('dashboard.list', [
+        'picture' => $pic,
       ]);
     }
 }

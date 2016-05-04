@@ -4,9 +4,11 @@
     <div class="row">
 		<div class="well">
         <h1 class="text-center"> Wish List</h1>
-        <h2 class="text-center">These are places you want to go!</h2>
+        <h2 class="text-center">Add details and categorize this future travel! </h2>
         <div class="list-group">
           <a href="#" class="list-group-item">
+            <form action="/wishlist" method="post" role="form">
+                    <?php echo csrf_field() ?>
                 <div class="media col-md-3">
                     <figure class="pull-left">
 
@@ -14,11 +16,17 @@
                     </figure>
                 </div>
                 <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> {{$picture->location}} </h4>
-                    <p class="list-group-item-text"> No description here?
-                    </p>
+                    <h4 class="list-group-item-heading"> Location: </h4>
+                     {{$picture->location}}
+
                 </div>
-                <div class="col-md-3 text-center">
+                <div class="col-md-6">
+                <div class="form-group">
+                    <label for="comment">Add a Comment:</label>
+                    <textarea class="form-control" rows="4" id="comment"></textarea>
+                </div>
+                </div>
+                <div class="col-md-3">
                      <div class="radio">
                         <label><input type="radio" name="optradio">Dream Travels   </label>
                       </div>
@@ -29,6 +37,11 @@
                         <label><input type="radio" name="optradio">One Year Travels</label>
                       </div>
                 </div>
+                  <input type="hidden" name="pic_id" value="{{$picture->id}}">
+                <div class="col-md-3">
+                <button href="#" class="myButton" type="submit"> Save </button> </center>
+                </div>
+                </form>
           </a>
         </div>
         </div>

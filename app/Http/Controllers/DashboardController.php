@@ -41,6 +41,7 @@ class DashboardController extends Controller
       $picture->name = $request->input('full_name');
       $picture->link = $request->input('img_url');
       $picture->tag = $request->input('tag');
+      $picture->user_id = Auth::user()->id;
       //add user_id.
       $picture->save();
       $pic_id = $picture->id;

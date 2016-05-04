@@ -44,7 +44,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/logout', 'DashboardController@logout');
 	Route::get('/results', 'DashBoardController@results');
 	Route::post('/results', 'DashboardController@store');
+	//Route::get('/wishlist', 'WishlistController@index');
 	Route::get('/wishlist', 'WishlistController@index');
+	Route::post('/wishlist', 'WishlistController@update');
 //	Route::get('/dream', 'WishlistController@dreamIndex');
 	//Route::get('/admin', 'AdminController@index');
 });
