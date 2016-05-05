@@ -49,4 +49,5 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('/wishlist', 'WishlistController@update');
 //	Route::get('/dream', 'WishlistController@dreamIndex');
 	Route::get('/admin', 'AdminController@index');
+	Route::post('/admin', 'AdminController@delete');
 });

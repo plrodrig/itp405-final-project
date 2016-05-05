@@ -25,4 +25,14 @@ class AdminController extends Controller
       }
     }
 
+    public function delete(Request $request)
+    {
+      $id = $request->input("user_id");
+      $user = User::find($id);
+      $user->delete();
+      $users = User::all();
+      return view('dashboard.admin', [
+        'users' => $users,
+      ]);
+    }
 }
