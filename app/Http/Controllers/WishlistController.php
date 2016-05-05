@@ -36,12 +36,28 @@ class WishlistController extends Controller
       //update object
       //if request has pic id, do something otherwise redirect
       //if put and no parameter, handle it.
+      //CHECK IF OBJECT IS IN DATABSE ALREADY
 
 
       $picture = $request->input('pic_id');
       $pic = Picture::find($picture);
-      $pic->description = "hiisiaia";
-      $pic->type= 'travel';
+      $userInput = $request->input('optradio');
+      //dd($request->input('optradio'));
+      $comp2 = '1';
+      $comp3 = '2';
+      $comp4 = '3';
+      //dd($request->input('optradio'));
+      if(strtolower($userInput) == strtolower($comp2)){
+          $pic->type= 'Dream';
+      }
+      elseif(strtolower($userInput) == strtolower($comp3)){
+          $pic->type= 'Reach';
+      }else{
+        $pic->type= 'Within';
+      }
+
+
+      $pic->description = $request->input('comments');
       $pic->save();
       //associate picture to a user?
       return view('dashboard.list', [

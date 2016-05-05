@@ -23,18 +23,18 @@
                 <div class="col-md-6">
                 <div class="form-group">
                     <label for="comment">Add a Comment:</label>
-                    <textarea class="form-control" rows="4" id="comment"></textarea>
+                    <textarea class="form-control" rows="4" id="comment" name="comments"></textarea>
                 </div>
                 </div>
                 <div class="col-md-3">
                      <div class="radio">
-                        <label><input type="radio" name="optradio">Dream Travels   </label>
+                        <label><input type="radio" name="optradio" value="1">Dream Travels   </label>
                       </div>
                       <div class="radio">
-                        <label><input type="radio" name="optradio">Reach Travels  </label>
+                        <label><input type="radio" name="optradio" value="2">Reach Travels  </label>
                       </div>
                       <div class="radio">
-                        <label><input type="radio" name="optradio">One Year Travels</label>
+                        <label><input type="radio" name="optradio" value="3">Within Year Travels</label>
                       </div>
                 </div>
                   <input type="hidden" name="pic_id" value="{{$picture->id}}">

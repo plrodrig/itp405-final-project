@@ -4,7 +4,6 @@
    <h1>Welcome, Traveler {{Auth::user()->name}}. <br> Search a location you'd love to visit!  </h1>
 
  </center>
- <a href="/logout"> Logout </a>
 
   <div class="container">
 

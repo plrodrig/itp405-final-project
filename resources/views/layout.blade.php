@@ -27,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">InstaTraveler</a>
+      <a class="navbar-brand" href="/dashboard">InstaTraveler</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,9 +39,11 @@
 
       </ul>
 
-    <!-- TOADD <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
-      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+       @if(Auth::check())
+        <li><a href="/logout">Logout</a></li>
+        @endif
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
