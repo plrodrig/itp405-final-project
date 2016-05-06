@@ -10,7 +10,7 @@ use App\User;
 use Hash;
 Use Validator;
 use App\Models\Wishlist;
-
+use Session;
 
 class RegisterController extends Controller
 {
@@ -73,6 +73,8 @@ class RegisterController extends Controller
       $mylist->user_id = $user->id;
       $mylist->type = 'Reach';
       $mylist->save();
+      Session::flash('message', 'success');
+
       return redirect('/login')->with('success', true);
     //  $user->name = $request->input('name');
     //  $user->email = $request->input('email');

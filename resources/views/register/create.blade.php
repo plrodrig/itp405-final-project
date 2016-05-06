@@ -1,6 +1,9 @@
 @extends('layout')
 @section('content')
 
+@if(Session::has('message'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+@endif
 <?php if(session('success')) : ?>
      <div class="alert alert-success" role="alert">Review was successfully Inserted.</div>
 <?php endif ?>

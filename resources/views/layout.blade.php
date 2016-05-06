@@ -33,9 +33,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+         @if(Auth::check())
         <li><a href="/dream">Dream Travels <span class="sr-only">(current)</span></a></li>
         <li><a href="/reach">Reach Travels</a></li>
         <li><a href="/within">One Year Travels</a></li>
+        @endif
+        @if(!Auth::check())
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+        @endif
+
 
       </ul>
 
