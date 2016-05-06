@@ -51,4 +51,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/within', 'WishlistController@within');
 	Route::get('/admin', 'AdminController@index');
 	Route::post('/admin', 'AdminController@delete');
+	Route::get('/about',  function () {
+	    return view('dashboard.about');
+	});
 });

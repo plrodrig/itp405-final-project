@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{ URL::asset('css/button.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/list.css') }}" />
      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="{{ URL::asset('css/about.css') }}" />
 
 </head>
 <nav class="navbar navbar-default">
@@ -33,6 +34,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="/about">About</a></li>
          @if(Auth::check())
         <li><a href="/dream">Dream Travels <span class="sr-only">(current)</span></a></li>
         <li><a href="/reach">Reach Travels</a></li>
