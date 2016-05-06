@@ -10,7 +10,8 @@ use App\User;
 use Hash;
 Use Validator;
 use App\Models\Picture;
-
+use App\Models\Wishlist;
+use Illuminate\Support\Facades\Auth;
 class WishlistController extends Controller
 {
     //
@@ -43,22 +44,53 @@ class WishlistController extends Controller
       $pic = Picture::find($picture);
       $userInput = $request->input('optradio');
       //dd($request->input('optradio'));
-      $comp2 = '1';
-      $comp3 = '2';
-      $comp4 = '3';
+      // $comp2 = '1';
+      // $comp3 = '2';
+      // $comp4 = '3';
       //dd($request->input('optradio'));
-      if(strtolower($userInput) == strtolower($comp2)){
-          $pic->type= 'Dream';
-      }
-      elseif(strtolower($userInput) == strtolower($comp3)){
-          $pic->type= 'Reach';
-      }else{
-        $pic->type= 'Within';
-      }
-
-
+      $wishlist = Wishlist::where('user_id',Auth::user()->id)->where('type', $userInput)->get()->pop();
+  //    $wishlist = Wishlist::where('type', '=', $userInput)->get();
+  //    dd($wishlist);
+      $pic->list_id = $wishlist->id;
+      // if(strtolower($userInput) == strtolower($comp2)){
+      //     $pic->type= 'Dream';
+      // }
+      // elseif(strtolower($userInput) == strtolower($comp3)){
+      //     $pic->type= 'Reach';
+      // }else{
+      //   $pic->type= 'Within';
+      // }
       $pic->description = $request->input('comments');
       $pic->save();
+      //type and name
+      //->where('user_id', '=', Auth::user()->id)
+      //create a list, if null
+    //  $list= List::where('type', '=', $pic->type);
+      //$pic = Picture::find( $request->input('pic_id'));
+      //NOW JUST FIND THAT WISHLIST AND UPDATE THAT SHIZ
+      //$mylist = new Wishlist;
+      //$mylist->user_id = Auth::user()->id;
+      //$mylist->type = $pic->type;
+      //$mylist->save();
+
+//look for list titled reach and belongs to user
+//grab its id, go to pic id, it has list field ,list_id. save lsit id from saved list object.
+
+
+
+
+      //dd($wishlist);
+      //add a picture to this wishlist, or assicate it.
+
+      //first it will return the databse where userid matches
+      //if nto then no pic
+    //  $toSearch  = List::find(Auth::user()->id);
+  //    $list = List::with('users')->findOrFail(Auth::user()->id);
+    //  if( $picture->user_id = Auth::user()->id){
+
+        //$list = List::find($picture);
+      //  $list->name == $pic->type
+      //}
       //associate picture to a user?
       return view('dashboard.list', [
         'picture' => $pic,

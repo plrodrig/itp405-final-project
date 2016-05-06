@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Picture extends Model
 {
   protected $fillable = [
-      'user_id', 'link', 'location', 'name', 'tag', 'description', 'type',
+      'user_id', 'link', 'location', 'name', 'tag', 'description', 'list_id', 'type',
   ];
+
+  public function wishlist()
+  {
+     return $this->belongsTo('App\Models\Wishlist');
+  }
 }

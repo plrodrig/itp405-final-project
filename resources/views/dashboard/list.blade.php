@@ -28,13 +28,13 @@
                 </div>
                 <div class="col-md-3">
                      <div class="radio">
-                        <label><input type="radio" name="optradio" value="1">Dream Travels   </label>
+                        <label><input type="radio" name="optradio" value="dream">Dream Travels   </label>
                       </div>
                       <div class="radio">
-                        <label><input type="radio" name="optradio" value="2">Reach Travels  </label>
+                        <label><input type="radio" name="optradio" value="Reach">Reach Travels  </label>
                       </div>
                       <div class="radio">
-                        <label><input type="radio" name="optradio" value="3">Within Year Travels</label>
+                        <label><input type="radio" name="optradio" value="Within">Within Year Travels</label>
                       </div>
                 </div>
                   <input type="hidden" name="pic_id" value="{{$picture->id}}">

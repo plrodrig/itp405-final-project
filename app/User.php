@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function lists(){
-      return $this->hasMany('App\Model\List');
+    public function wishlists(){
+      return $this->hasMany('App\Model\Wishlist');
     }
 }

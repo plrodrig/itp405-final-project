@@ -1,11 +1,16 @@
 @extends('layout')
 @section('content')
 
+<?php if(session('success')) : ?>
+     <div class="alert alert-success" role="alert">Review was successfully Inserted.</div>
+<?php endif ?>
 <?php if(!empty($errop)) : ?>
   <?php foreach ($errop->all() as $error) : ?>
+    <div class="alert alert-danger">
     <li>
       <?php echo $error ?>
     </li>
+    </div>
   <?php endforeach ?>
 <?php endif ?>
 
@@ -13,9 +18,11 @@
   dd(count($errors));
   <ul>
     <?php foreach ($errors->all() as $error) : ?>
+      <div class="alert alert-danger">
       <li>
         <?php echo $error ?>
       </li>
+      </div>
     <?php endforeach ?>
   </ul>
 <?php endif ?>
