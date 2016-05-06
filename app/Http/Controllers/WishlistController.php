@@ -31,6 +31,40 @@ class WishlistController extends Controller
       ]);
     }
 
+    public function dream()
+    {
+      $list= Wishlist::where('user_id',Auth::user()->id)->where('type', 'Dream')->get()->pop();
+      $pictures = Picture::where('list_id',$list->id)->get();
+      $type = 'Dream';
+      return view('dashboard.mylist', [
+        'list' => $pictures,
+        'type' => $type,
+      ]);
+    }
+
+    public function reach()
+    {
+      $list= Wishlist::where('user_id',Auth::user()->id)->where('type', 'Reach')->get()->pop();
+      $pictures = Picture::where('list_id',$list->id)->get();
+      $type = 'Reach';
+      return view('dashboard.mylist', [
+        'list' => $pictures,
+        'type' => $type,
+      ]);
+    }
+
+    public function within()
+    {
+      $list= Wishlist::where('user_id',Auth::user()->id)->where('type', 'Within')->get()->pop();
+      $pictures = Picture::where('list_id',$list->id)->get();
+      $type = 'Within';
+    //  dd($pictures);
+      return view('dashboard.mylist', [
+        'list' => $pictures,
+        'type' => $type,
+      ]);
+    }
+
     public function update(Request $request)
     {
 
@@ -92,8 +126,9 @@ class WishlistController extends Controller
       //  $list->name == $pic->type
       //}
       //associate picture to a user?
-      return view('dashboard.list', [
-        'picture' => $pic,
-      ]);
+      //return view('dashboard.list', [
+        //'picture' => $pic,
+      //]);
+      return view('dashboard.dashboard');
     }
 }

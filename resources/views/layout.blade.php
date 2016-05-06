@@ -33,9 +33,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dream Travels <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Reach Travels</a></li>
-        <li><a href="#">One Year Travels</a></li>
+        <li><a href="/dream">Dream Travels <span class="sr-only">(current)</span></a></li>
+        <li><a href="/reach">Reach Travels</a></li>
+        <li><a href="/within">One Year Travels</a></li>
 
       </ul>
 
