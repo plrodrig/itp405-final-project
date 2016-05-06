@@ -16,3 +16,7 @@ I will be using the Google Geolocation API, and Instagram API.
 +One table called pictures will be for pictures which will contain tag, user_id, a link to a picture, name, location,
 description,and list_id.
 +One table called wishlists will  contain user_id, and type
+
+
+Youtube video: 
+Heroku:
