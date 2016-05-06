@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/plrodrig/itp405-final-project.svg?branch=master)](https://travis-ci.org/plrodrig/itp405-final-project)
 # InstaTraveller
 
 ##What is your website about?
