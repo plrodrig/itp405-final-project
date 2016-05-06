@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-3">
                      <div class="radio">
-                        <label><input type="radio" name="optradio" value="dream">Dream Travels   </label>
+                        <label><input type="radio" name="optradio" value="Dream">Dream Travels   </label>
                       </div>
                       <div class="radio">
                         <label><input type="radio" name="optradio" value="Reach">Reach Travels  </label>

@@ -20,7 +20,7 @@
 				<div class="row">
             <center>
 					<div class="col-xs-12 col-sm-12 col-md-12">
-                     <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+                     <button type="submit" class="btn btn-lg btn-success btn-block" value="Sign In"> Sign in </button>
 					</div>
 				</div>
 			</fieldset>

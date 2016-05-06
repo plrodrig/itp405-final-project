@@ -16,7 +16,7 @@
       	    <div class="input-group">
                   <input type="text" class="form-control" name="location" placeholder="Search">
                   <span class="input-group-btn">
-                      <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                      <button class="btn btn-default" type="submit">Search</button>
                   </span>
             </div>
           </form>
