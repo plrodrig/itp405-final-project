@@ -32,25 +32,20 @@ class DashboardController extends Controller
 
     public function store(Request $request)
     {
-      //need access to these parameters so i can save it to picture object
-    //  $location = $request->input('location');
-    //  $full_name = $request->input('full_name');
-    //  $img_url = $request->input('url');
+
       $picture = new Picture;
       $picture->location = $request->input('location');
       $picture->name = $request->input('full_name');
       $picture->link = $request->input('img_url');
       $picture->tag = $request->input('tag');
       $picture->user_id = Auth::user()->id;
-      //add user_id.
+
       $picture->save();
       $pic_id = $picture->id;
-      //return redirect('/login')->with('success', true);
-      //create new picture object
-      //add details in here
+
       $request->session()->put('pic', $pic_id);
       $request->session()->save();
-      //save
+
       return redirect('/wishlist')->with('success', true);
     }
 
