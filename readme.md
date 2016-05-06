@@ -18,5 +18,5 @@ description,and list_id.
 +One table called wishlists will  contain user_id, and type
 
 
-Youtube video: 
-Heroku:
+Youtube video: https://www.youtube.com/watch?v=e4qw-GYH40I&feature=youtu.be
+Heroku: http://instatraveler.herokuapp.com/login
